@@ -14,6 +14,7 @@ http://luckyyowu.tistory.com/352
 ## 프로젝트
 * node.js
   * [node.js + express + postgresql를 이용한 RESTful 구현](https://github.com/Sung-jin/toy_Project/tree/master/node.js/node-postgres-rest)
+  * [socket.IO + android toy project](https://github.com/Sung-jin/toy_Project/tree/master/node.js/socket.io/android)
   * [node.js를 이용하여 구글 API 및 데이터베이스 연동 프로젝트](https://github.com/Sung-jin/toy_Project/tree/master/node.js/use_API_by_Nodejs)
 * vue.js
   * [vue.js 학습목적 토이 프로젝트](https://github.com/Sung-jin/toy_Project/tree/master/vue.js/vue.js_FE)
