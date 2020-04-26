@@ -1,0 +1,10 @@
+version: '3'
+services:
+  cloud-config-server:
+    build:
+      context: .
+      args:
+        - BUILD_VERSION=$BUILD_VERSION
+    container_name: cloud-config-server
+    ports:
+      - "8888:8888"
