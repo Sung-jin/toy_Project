@@ -1,0 +1,3 @@
+spring:
+  test:
+    message: "hello world!"
