@@ -1,0 +1,46 @@
+apply plugin: 'liquibase'
+
+//plugins {
+//	id 'org.springframework.boot' version '2.2.6.RELEASE'
+//	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+//	id 'java'
+//}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.liquibase:liquibase-core:3.8.8'
+	implementation 'org.liquibase:liquibase-gradle-plugin:2.0.2'
+	implementation 'mysql:mysql-connectro-java:8.0.19'
+}
+
+def changeLog = "$projectDir/src/main/java/com/example/liquibase/changelog/changelog-master.xml"
+
+//task('liquibase') << {
+//	liquibase {
+//		activities {
+//			main {
+//				changeLogFile changeLog
+//				url 'jdbc:mysql://fonnie.xyz:3306/liquibase?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC'
+//				username 'test'
+//				password '1234'
+//			}
+//		}
+//	}
+//}
+
+test {
+	useJUnitPlatform()
+}

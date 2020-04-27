@@ -1,0 +1,30 @@
+apply plugin: 'liquibase'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.liquibase:liquibase-core:3.4.1'
+        classpath "org.liquibase:liquibase-gradle-plugin:1.1.1"
+        classpath 'mysql:mysql-connector-java:5.1.13'
+    }
+}
+
+def changeLog = "$projectDir/src/main/java/com/example/liquibase/changelog/changelog-master.xml"
+
+task('dev') << {
+    println "executing dev"
+
+    liquibase {
+        activities {
+			main {
+				changeLogFile changeLog
+				url 'jdbc:mysql://fonnie.xyz:3306/liquibase?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC'
+				username 'test'
+				password '1234'
+			}
+        }
+    }
+}
