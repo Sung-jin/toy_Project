@@ -1,7 +1,6 @@
 FROM openjdk:8-jdk-alpine
-ARG BUILD_VERSION
 
-ADD cloud-config-server-${BUILD_VERSION}.jar cloud-config-server.jar
+ADD cloud-config-server.jar cloud-config-server.jar
 ADD cloud-config-server /root/.ssh/id_rsa
 ADD config /root/.ssh/config
 
