@@ -1,8 +1,0 @@
-version: '3'
-services:
-  cloud-config-server:
-    build:
-      context: .
-    container_name: cloud-config-server
-    ports:
-      - "8888:8888"
